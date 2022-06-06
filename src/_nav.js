@@ -2,7 +2,7 @@ import React from 'react'
 import CIcon from '@coreui/icons-react'
 import { cilUserFollow, cilUser, cilCalendar, cilFile, cilBook, cilBlur } from '@coreui/icons'
 // import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
-import { CNavItem } from '@coreui/react'
+import { CNavItem, CNavGroup } from '@coreui/react'
 
 const _nav = [
   {
@@ -10,6 +10,24 @@ const _nav = [
     name: 'Admission',
     to: '/admission',
     icon: <CIcon icon={cilUserFollow} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavGroup,
+    name: 'Student Details',
+    to: '/studentrecords',
+    icon: <CIcon icon={cilUserFollow} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'View Records',
+        to: '/studentrecords',
+      },
+      {
+        component: CNavItem,
+        name: 'Add Students',
+        to: '/buttons/button-groups',
+      },
+    ],
   },
   {
     component: CNavItem,
