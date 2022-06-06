@@ -2,9 +2,11 @@
 import React from 'react'
 import {CCol,CWidgetStatsC,CRow,CCardBody,CCardHeader,CCard, CImage} from '@coreui/react'
 import CIcon from '@coreui/icons-react'
+import {CChartLine } from '@coreui/react-chartjs'
 import {cilPeople,cilUserFollow,cilBasket,cilChartPie,cilSpeedometer,cilSpeech} from '@coreui/icons'
 import Profileimg from './student.png'
 const Studentprofile = () => {
+    const random = () => Math.round(Math.random() * 100)
   return (
       <>
       <CRow>
@@ -53,7 +55,7 @@ const Studentprofile = () => {
         </CCard>
           </CCol>
       </CRow>
-      
+
          <CRow>
             <CCol sm={6} md={2}>
               <CWidgetStatsC
@@ -102,6 +104,39 @@ const Studentprofile = () => {
             </CCol>
           
           </CRow>
+          
+          {/* <CRow>
+          <CCol xs={12}>
+        <CCard className="mb-4">
+          <CCardHeader>Alex Performance in half yearly exmas</CCardHeader>
+          <CCardBody>
+            <CChartLine
+              data={{
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [
+                  {
+                    label: 'My First dataset',
+                    backgroundColor: 'rgba(220, 220, 220, 0.2)',
+                    borderColor: 'rgba(220, 220, 220, 1)',
+                    pointBackgroundColor: 'rgba(220, 220, 220, 1)',
+                    pointBorderColor: '#fff',
+                    data: [random(), random(), random(), random(), random(), random(), random()],
+                  },
+                  {
+                    label: 'My Second dataset',
+                    backgroundColor: 'rgba(151, 187, 205, 0.2)',
+                    borderColor: 'rgba(151, 187, 205, 1)',
+                    pointBackgroundColor: 'rgba(151, 187, 205, 1)',
+                    pointBorderColor: '#fff',
+                    data: [random(), random(), random(), random(), random(), random(), random()],
+                  },
+                ],
+              }}
+            />
+          </CCardBody>
+        </CCard>
+      </CCol>
+          </CRow> */}
       </>
     );
 }
