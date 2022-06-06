@@ -1,6 +1,6 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
-import { cilUserFollow, cilUser, cilCalendar, cilFile, cilBook, cilAvTimer } from '@coreui/icons'
+import { cilUser, cilCalendar, cilFile, cilBook, cilAvTimer } from '@coreui/icons'
 // import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 import { CNavItem, CNavGroup } from '@coreui/react'
 

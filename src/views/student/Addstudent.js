@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable prettier/prettier */
 import React from 'react'
-import { CButton, CInputGroup, CFormInput,CFormLabel,CCol,CForm,CFormSelect,CFormCheck} from '@coreui/react'
+import { CButton, CFormInput,CFormLabel,CCol,CForm,CFormSelect} from '@coreui/react'
 const Addstudent = () => {
   return (
       <>
