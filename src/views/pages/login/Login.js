@@ -25,7 +25,7 @@ const Login = () => {
   let navigate = useNavigate()
   const loginuser = () => {
     if (stdInput.name !== null && stdInput.password !== null) {
-      navigate('/dashboard')
+      navigate('/attendance')
     } else {
       alert('Please enter username with correct password')
     }
