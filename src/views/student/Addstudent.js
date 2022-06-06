@@ -30,13 +30,25 @@ const Addstudent = () => {
                   <CFormLabel htmlFor="inputAddress2">Contact No</CFormLabel>
                   <CFormInput id="inputAddress2" placeholder="Enter number" />
                 </CCol>
-                <CCol xs={8}>
-                  <CFormLabel htmlFor="inputAddress">Address</CFormLabel>
+                <CCol xs={6}>
+                  <CFormLabel htmlFor="inputAddress">Address line 1</CFormLabel>
                   <CFormInput id="inputAddress" placeholder="Enter address" />
+                </CCol>
+                <CCol xs={6}>
+                  <CFormLabel htmlFor="inputAddress2">Address line 2</CFormLabel>
+                  <CFormInput id="inputAddress2" placeholder="Enter address" />
+                </CCol>
+                <CCol xs={4}>
+                  <CFormLabel htmlFor="inputAddress">Batch Year</CFormLabel>
+                  <CFormInput id="inputAddress" placeholder="Enter Batch Year" />
+                </CCol>
+                <CCol xs={4}>
+                  <CFormLabel htmlFor="inputAddress">Student ID</CFormLabel>
+                  <CFormInput id="inputAddress" placeholder="Enter Student ID" />
                 </CCol>
                 <CCol xs={4}>
                   <CFormLabel htmlFor="inputAddress">Date of Birth</CFormLabel>
-                  <CFormInput id="inputAddress" type="date"  />
+                  <CFormInput id="inputAddress" type="date"/>
                 </CCol>
                 <CCol xs={6}>
                   <CFormLabel htmlFor="inputAddress2">Guardian's name</CFormLabel>

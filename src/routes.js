@@ -56,11 +56,13 @@ const Attendance = React.lazy(() => import('./views/attendance/Attendance'))
 const Assignment = React.lazy(() => import('./views/assignment/Assignment'))
 const MarkCard = React.lazy(() => import('./views/markcard/Markcard'))
 const TimeTable = React.lazy(() => import('./views/timetable/Timetable'))
+const Studprofile = React.lazy(() => import('./views/student/Studentprofile'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/studentrecords/addstudent', name: 'New Student', element: NewStudent },
   { path: '/studentrecords/viewrecord', name: 'View Student', element: ViewStudent },
+  { path: '/studentprofile', name: 'Student Profile', element: Studprofile },
   { path: '/attendance', name: 'Attendance', element: Attendance },
   { path: '/assignment', name: 'Assignment', element: Assignment },
   { path: '/markCard', name: 'Mark Card', element: MarkCard },
