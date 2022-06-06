@@ -1,39 +1,33 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
-import { cilUserFollow, cilUser, cilCalendar, cilFile, cilBook, cilBlur } from '@coreui/icons'
+import { cilUserFollow, cilUser, cilCalendar, cilFile, cilBook, cilAvTimer } from '@coreui/icons'
 // import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 import { CNavItem, CNavGroup } from '@coreui/react'
 
 const _nav = [
-  {
-    component: CNavItem,
-    name: 'Admission',
-    to: '/admission',
-    icon: <CIcon icon={cilUserFollow} customClassName="nav-icon" />,
-  },
+  // {
+  //   component: CNavItem,
+  //   name: 'Admission',
+  //   to: '/admission',
+  //   icon: <CIcon icon={cilUserFollow} customClassName="nav-icon" />,
+  // },
   {
     component: CNavGroup,
     name: 'Student Details',
     to: '/studentrecords',
-    icon: <CIcon icon={cilUserFollow} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
-        name: 'View Records',
-        to: '/studentrecords',
+        name: 'Add Students',
+        to: '/studentrecords/addstudent',
       },
       {
         component: CNavItem,
-        name: 'Add Students',
-        to: '/buttons/button-groups',
+        name: 'View Records',
+        to: '/studentrecords/viewrecord',
       },
     ],
-  },
-  {
-    component: CNavItem,
-    name: 'Student Details',
-    to: '/studentDetails',
-    icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
@@ -43,52 +37,64 @@ const _nav = [
   },
   {
     component: CNavItem,
-    name: `'Student KPI's`,
-    to: '/studentkpi',
-    icon: <CIcon icon={cilCalendar} customClassName="nav-icon" />,
-  },
-  {
-    component: CNavItem,
-    name: 'Subject Curricular',
-    to: '/subjectCurricular',
-    icon: <CIcon icon={cilBlur} customClassName="nav-icon" />,
-  },
-  {
-    component: CNavItem,
-    name: 'Results Portal',
-    to: '/resultPortal',
-    icon: <CIcon icon={cilBook} customClassName="nav-icon" />,
-  },
-  {
-    component: CNavItem,
-    name: 'Event & Activites',
-    to: '/eventandactivity',
-    icon: <CIcon icon={cilBook} customClassName="nav-icon" />,
-  },
-  {
-    component: CNavItem,
     name: 'Assignment',
     to: '/assignment',
     icon: <CIcon icon={cilFile} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Exam Material',
-    to: '/examMaterial',
-    icon: <CIcon icon={cilFile} customClassName="nav-icon" />,
+    name: 'Mark Card',
+    to: '/markCard',
+    icon: <CIcon icon={cilBook} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Complaints',
-    to: '/complaints',
-    icon: <CIcon icon={cilFile} customClassName="nav-icon" />,
+    name: 'Time Table',
+    to: '/timeTable',
+    icon: <CIcon icon={cilAvTimer} customClassName="nav-icon" />,
   },
-  {
-    component: CNavItem,
-    name: 'Faculty Management',
-    to: '/facultymanagment',
-    icon: <CIcon icon={cilFile} customClassName="nav-icon" />,
-  },
+  // {
+  //   component: CNavItem,
+  //   name: `'Student KPI's`,
+  //   to: '/studentkpi',
+  //   icon: <CIcon icon={cilCalendar} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Subject Curricular',
+  //   to: '/subjectCurricular',
+  //   icon: <CIcon icon={cilBlur} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Results Portal',
+  //   to: '/resultPortal',
+  //   icon: <CIcon icon={cilBook} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Event & Activites',
+  //   to: '/eventandactivity',
+  //   icon: <CIcon icon={cilBook} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Exam Material',
+  //   to: '/examMaterial',
+  //   icon: <CIcon icon={cilFile} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Complaints',
+  //   to: '/complaints',
+  //   icon: <CIcon icon={cilFile} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Faculty Management',
+  //   to: '/facultymanagment',
+  //   icon: <CIcon icon={cilFile} customClassName="nav-icon" />,
+  // },
   // {
   //   component: CNavItem,
   //   name: 'Dashboard',

@@ -50,11 +50,21 @@ const Toasts = React.lazy(() => import('./views/notifications/toasts/Toasts'))
 
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
-const Studentview = React.lazy(() => import('./views/pages/Students/Studentsview'))
+const NewStudent = React.lazy(() => import('./views/student/Addstudent'))
+const ViewStudent = React.lazy(() => import('./views/student/ViewStudent'))
+const Attendance = React.lazy(() => import('./views/attendance/Attendance'))
+const Assignment = React.lazy(() => import('./views/assignment/Assignment'))
+const MarkCard = React.lazy(() => import('./views/markcard/Markcard'))
+const TimeTable = React.lazy(() => import('./views/timetable/Timetable'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
-  { path: '/studentrecords', name: 'Studentview', element: Studentview },
+  { path: '/studentrecords/addstudent', name: 'New Student', element: NewStudent },
+  { path: '/studentrecords/viewrecord', name: 'View Student', element: ViewStudent },
+  { path: '/attendance', name: 'Attendance', element: Attendance },
+  { path: '/assignment', name: 'Assignment', element: Assignment },
+  { path: '/markCard', name: 'Mark Card', element: MarkCard },
+  { path: '/timeTable', name: 'Time Table', element: TimeTable },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
   { path: '/theme', name: 'Theme', element: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', element: Colors },
