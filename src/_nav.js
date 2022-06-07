@@ -44,7 +44,7 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Student Profile',
-    to: '/studentprofile',
+    to: '/dashboards',
     icon: <CIcon icon={cilFile} customClassName="nav-icon" />,
   },
   {

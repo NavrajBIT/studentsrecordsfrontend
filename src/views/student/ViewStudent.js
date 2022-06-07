@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
 import { CButton, CTable,CTableBody,CTableHead,CTableHeaderCell,CTableRow,CTableDataCell, CFormInput,CForm,CFormLabel,CCol} from '@coreui/react'
+import { Link } from 'react-router-dom';
 const Addstudent = () => {
   return (
       <>
@@ -49,7 +50,8 @@ const Addstudent = () => {
                   </CTableRow>
                   <CTableRow>
                     <CTableHeaderCell scope="row">2</CTableHeaderCell>
-                    <CTableDataCell>Jacob</CTableDataCell>
+                    <Link to='/studentprofile' ><CTableDataCell>Jacob</CTableDataCell>
+                    </Link>
                     <CTableDataCell>Thornton</CTableDataCell>
                     <CTableDataCell>@fat</CTableDataCell>
                     <CTableDataCell>Mark</CTableDataCell>
