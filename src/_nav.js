@@ -39,6 +39,13 @@ const _nav = [
     icon: <CIcon icon={cilFile} customClassName="nav-icon" />,
   },
   {
+    access: 'Student',
+    component: CNavItem,
+    name: 'Assignment',
+    to: '/studentassignment',
+    icon: <CIcon icon={cilFile} customClassName="nav-icon" />,
+  },
+  {
     access: 'Admin',
     component: CNavItem,
     name: 'Student Dashboard',
@@ -69,8 +76,22 @@ const _nav = [
   {
     access: 'Student',
     component: CNavItem,
-    name: 'Time Table',
-    to: '/timeTable',
+    name: 'My Attendance',
+    to: '/myattendance',
+    icon: <CIcon icon={cilAvTimer} customClassName="nav-icon" />,
+  },
+  {
+    access: 'Student',
+    component: CNavItem,
+    name: 'Marks Card',
+    to: '/studentmarks',
+    icon: <CIcon icon={cilAvTimer} customClassName="nav-icon" />,
+  },
+  {
+    access: 'Student',
+    component: CNavItem,
+    name: 'My Profile',
+    to: '/myprofile',
     icon: <CIcon icon={cilAvTimer} customClassName="nav-icon" />,
   },
   // {

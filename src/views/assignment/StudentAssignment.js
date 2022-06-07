@@ -1,10 +1,10 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
 import {CFormLabel, CFormInput, CButton,CForm,CCol} from '@coreui/react'
-const Assignment = () => {
+const StudentAssignment = () => {
   return (
       <>
-       <CForm className="row g-3">
+        <CForm className="row g-3">
             <CCol md={6}>
                   <CFormLabel htmlFor="inputEmail4">For Subject</CFormLabel>
                   <CFormInput type="email" id="inputEmail4" placeholder="Enter Subject"/>
@@ -22,4 +22,4 @@ const Assignment = () => {
       </>
     );
 }
-export default Assignment;
+export default StudentAssignment;
