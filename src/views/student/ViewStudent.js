@@ -2,7 +2,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { CButton, CTable,CTableBody,CTableHead,CTableHeaderCell,CTableRow,CTableDataCell, CFormInput,CForm,CFormLabel,CCol} from '@coreui/react'
-import { Link } from 'react-router-dom';
+
 const Addstudent = () => {
   const navigate = useNavigate();
   return (
