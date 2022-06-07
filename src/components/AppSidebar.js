@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import userContext from 'src/context/User/userContext'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler } from '@coreui/react'
@@ -19,6 +20,11 @@ const AppSidebar = () => {
   const dispatch = useDispatch()
   const unfoldable = useSelector((state) => state.sidebarUnfoldable)
   const sidebarShow = useSelector((state) => state.sidebarShow)
+  const user = useContext(userContext)
+  const checkAccess = (nav) => {
+    return nav.access === user.userType
+  }
+  const newNav = navigation.filter(checkAccess)
 
   return (
     <CSidebar
@@ -36,7 +42,7 @@ const AppSidebar = () => {
       </CSidebarBrand>
       <CSidebarNav>
         <SimpleBar>
-          <AppSidebarNav items={navigation} />
+          <AppSidebarNav items={newNav} />
         </SimpleBar>
       </CSidebarNav>
       {/* <CSidebarToggler

@@ -1,8 +1,10 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { CButton, CTable,CTableBody,CTableHead,CTableHeaderCell,CTableRow,CTableDataCell, CFormInput,CForm,CFormLabel,CCol} from '@coreui/react'
 import { Link } from 'react-router-dom';
 const Addstudent = () => {
+  const navigate = useNavigate();
   return (
       <>
        <CForm className="row g-3 mb-5">
@@ -48,10 +50,9 @@ const Addstudent = () => {
                     <CTableDataCell>Otto</CTableDataCell>
                     <CTableDataCell>@mdo</CTableDataCell>
                   </CTableRow>
-                  <CTableRow>
+                  <CTableRow style={{cursor: "pointer"}} onClick={() => navigate('/studentprofile')}>
                     <CTableHeaderCell scope="row">2</CTableHeaderCell>
-                    <Link to='/studentprofile' ><CTableDataCell>Jacob</CTableDataCell>
-                    </Link>
+                    <CTableDataCell>Jacob</CTableDataCell>
                     <CTableDataCell>Thornton</CTableDataCell>
                     <CTableDataCell>@fat</CTableDataCell>
                     <CTableDataCell>Mark</CTableDataCell>

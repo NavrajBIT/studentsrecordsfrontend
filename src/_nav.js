@@ -5,13 +5,8 @@ import { cilUser, cilCalendar, cilFile, cilBook, cilAvTimer } from '@coreui/icon
 import { CNavItem, CNavGroup } from '@coreui/react'
 
 const _nav = [
-  // {
-  //   component: CNavItem,
-  //   name: 'Admission',
-  //   to: '/admission',
-  //   icon: <CIcon icon={cilUserFollow} customClassName="nav-icon" />,
-  // },
   {
+    access: 'Admin',
     component: CNavGroup,
     name: 'Student Details',
     to: '/studentrecords',
@@ -30,30 +25,49 @@ const _nav = [
     ],
   },
   {
+    access: 'Admin',
     component: CNavItem,
     name: 'Attendance',
     to: '/attendance',
     icon: <CIcon icon={cilCalendar} customClassName="nav-icon" />,
   },
   {
+    access: 'Admin',
     component: CNavItem,
     name: 'Assignment',
     to: '/assignment',
     icon: <CIcon icon={cilFile} customClassName="nav-icon" />,
   },
   {
+    access: 'Admin',
     component: CNavItem,
     name: 'Student Profile',
     to: '/dashboards',
     icon: <CIcon icon={cilFile} customClassName="nav-icon" />,
   },
   {
+    access: 'Admin',
     component: CNavItem,
     name: 'Mark Card',
     to: '/markCard',
     icon: <CIcon icon={cilBook} customClassName="nav-icon" />,
   },
   {
+    access: 'Admin',
+    component: CNavItem,
+    name: 'Time Table',
+    to: '/timeTable',
+    icon: <CIcon icon={cilAvTimer} customClassName="nav-icon" />,
+  },
+  {
+    access: 'Student',
+    component: CNavItem,
+    name: 'Time Table',
+    to: '/timeTable',
+    icon: <CIcon icon={cilAvTimer} customClassName="nav-icon" />,
+  },
+  {
+    access: 'Student',
     component: CNavItem,
     name: 'Time Table',
     to: '/timeTable',

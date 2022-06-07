@@ -67,7 +67,7 @@ const routes = [
   { path: '/assignment', name: 'Assignment', element: Assignment },
   { path: '/markCard', name: 'Mark Card', element: MarkCard },
   { path: '/timeTable', name: 'Time Table', element: TimeTable },
-  { path: '/dashboards', name: 'Dashboard', element: Dashboard },
+  { path: '/dashboards', name: 'Dashboar', element: Dashboard },
   { path: '/theme', name: 'Theme', element: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', element: Colors },
   { path: '/theme/typography', name: 'Typography', element: Typography },

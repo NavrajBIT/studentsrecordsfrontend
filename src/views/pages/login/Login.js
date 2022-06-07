@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+/* eslint-disable no-sequences */
+/* eslint-disable no-unused-expressions */
+import React, { useState, useContext } from 'react'
+import userContext from 'src/context/User/userContext'
 import { useNavigate } from 'react-router-dom'
 import {
   CButton,
@@ -14,10 +17,11 @@ import {
   CRow,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { cilLockLocked, cilUser } from '@coreui/icons'
+import { cilLockLocked, cilUser, cilInfo } from '@coreui/icons'
 import './login.css'
 
 const Login = () => {
+  const user = useContext(userContext)
   const [stdInput, setStdInput] = useState({
     name: null,
     password: null,
@@ -67,6 +71,19 @@ const Login = () => {
                         }}
                       />
                     </CInputGroup>
+                    <CInputGroup className="mb-3">
+                      <CInputGroupText>
+                        <CIcon icon={cilInfo} />
+                      </CInputGroupText>
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                        onChange={(e) => user.updateType(e.target.value)}
+                      >
+                        <option defaultValue="Admin">Admin</option>
+                        <option value="Student">Student</option>
+                      </select>
+                    </CInputGroup>
                     <CRow>
                       <CCol xs={6}>
                         <CButton color="primary" className="px-4" onClick={() => loginuser()}>
@@ -75,7 +92,7 @@ const Login = () => {
                       </CCol>
                       <CCol xs={6} className="text-end">
                         <CButton color="link" className="px-0 text-white">
-                          Forgot password?
+                          Forgot password ?
                         </CButton>
                       </CCol>
                     </CRow>
