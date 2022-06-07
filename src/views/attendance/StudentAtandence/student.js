@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-export const empData = [
+export const stdData = [
     {
         unit: "BT",
         site: "Moradabad",

@@ -1,9 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React,{useState, useEffect} from 'react'
-import TableRow from "./EmployeeAtandence/TableRow";
-import { empData } from "./EmployeeAtandence/employees";
-import './EmployeeAtandence/EmployeeAtandence.css'
-import {CFormLabel, CFormInput, CButton} from '@coreui/react'
+import TableRow from "./StudentAtandence/TableRow";
+import { stdData } from "./StudentAtandence/student";
+import './StudentAtandence/studentAtandence.css'
 const Attendance = () => {
   const date = new Date();
   const currentYear = date.getFullYear();
@@ -49,7 +48,7 @@ const Attendance = () => {
           </tr>
         </thead>
         <tbody>
-          {empData.map((emp, index) => {
+          {stdData.map((emp, index) => {
             return (
               <TableRow
                 key={index}

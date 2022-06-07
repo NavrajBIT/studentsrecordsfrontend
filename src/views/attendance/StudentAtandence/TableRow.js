@@ -1,18 +1,19 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react/prop-types */
 import React from 'react'
+import './studentAtandence.css'
 const TableRow = ({ sno, unit, site, empcode, name, days }) => {
   return (
-    <tr>
+    <tr className='tablerow'>
       <th scope='row'>{sno + 1}</th> {/* s.no */}
       <td>{unit}</td> {/* unit */}
       <td>{site}</td> {/* site */}
-      <td>{empcode}</td> {/* emp code */}
-      <td>{name}</td> {/* name */}
+      <td className='codedata'>{empcode}</td> {/* emp code */}
+      <td className='stdname'>{name}</td> {/* name */}
       {[...Array(days)].map((date, index) => {
         return (
           <td key={index}>
-            <select name="pora">
+            <select className="form-select" style={{width: "60px"}} name="pora">
               <option value="absent">A</option>
               <option value="present">P</option>
             </select>
