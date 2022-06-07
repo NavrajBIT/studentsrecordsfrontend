@@ -41,8 +41,8 @@ const _nav = [
   {
     access: 'Admin',
     component: CNavItem,
-    name: 'Student Profile',
-    to: '/dashboards',
+    name: 'Student Dashboard',
+    to: '/studentdashboard',
     icon: <CIcon icon={cilFile} customClassName="nav-icon" />,
   },
   {
