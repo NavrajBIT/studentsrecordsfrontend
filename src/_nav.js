@@ -48,13 +48,6 @@ const _nav = [
   {
     access: 'Admin',
     component: CNavItem,
-    name: 'Student Dashboard',
-    to: '/studentdashboard',
-    icon: <CIcon icon={cilFile} customClassName="nav-icon" />,
-  },
-  {
-    access: 'Admin',
-    component: CNavItem,
     name: 'Mark Card',
     to: '/markCard',
     icon: <CIcon icon={cilBook} customClassName="nav-icon" />,

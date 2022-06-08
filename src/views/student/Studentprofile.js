@@ -2,11 +2,9 @@
 import React from 'react'
 import {CCol,CWidgetStatsC,CRow,CCardBody,CCardHeader,CCard, CImage} from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import {CChartLine } from '@coreui/react-chartjs'
-import {cilPeople,cilUserFollow,cilBasket,cilChartPie,cilSpeedometer,cilSpeech} from '@coreui/icons'
+import {cilPeople,cilUserFollow,cilBasket,cilChartPie,cilSpeedometer} from '@coreui/icons'
 import Profileimg from './student.png'
 const Studentprofile = () => {
-    const random = () => Math.round(Math.random() * 100)
   return (
       <>
       <CRow>
@@ -20,34 +18,13 @@ const Studentprofile = () => {
                     <CCol lg={3}>
                         <CImage className="p-2" align="start" rounded src={Profileimg} width={200} height={200} />
                     </CCol>
-
                     <CCol lg={3}>
                         <div className='info'>
-                            <p>Name: Alex Williams</p>
-                            <p>Class: XII</p>
-                            <p>Stream: PCM</p>
-                            <p>Academic Status: Good </p>
-                            <p>Stream: PCM</p>
-                        </div>
-                    </CCol>
-
-                    <CCol lg={3}>
-                        <div className='info'>
-                            <p>Name: Alex Williams</p>
-                            <p>Class: XII</p>
-                            <p>Stream: PCM</p>
-                            <p>Academic Status: Good </p>
-                            <p>Stream: PCM</p>
-                        </div>
-                    </CCol>
-                    
-                    <CCol lg={3}>
-                        <div className='info'>
-                            <p>Name: Alex Williams</p>
-                            <p>Class: XII</p>
-                            <p>Stream: PCM</p>
-                            <p>Academic Status: Good </p>
-                            <p>Stream: PCM</p>
+                            <p>Name: {"Alex Williams"}</p>
+                            <p>Class: {"XII"}</p>
+                            <p>Stream: {"PCM"}</p>
+                            <p>Academic Status: {"Good"} </p>
+                            <p>Stream: {"PCM"}</p>
                         </div>
                     </CCol>
                 </CRow>

@@ -2,14 +2,12 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import './studentAtandence.css'
-const TableRow = ({ sno, unit, site, empcode, name, days }) => {
+const TableRow = ({ sno, stdroll, name, days }) => {
   return (
     <tr className='tablerow'>
       <th scope='row'>{sno + 1}</th> {/* s.no */}
-      <td>{unit}</td> {/* unit */}
-      <td>{site}</td> {/* site */}
-      <td className='codedata'>{empcode}</td> {/* emp code */}
-      <td className='stdname'>{name}</td> {/* name */}
+      <td>{stdroll}</td> {/* std roll */}
+      <td>{name}</td> {/* std name */}
       {[...Array(days)].map((date, index) => {
         return (
           <td key={index}>

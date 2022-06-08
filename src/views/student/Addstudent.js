@@ -16,19 +16,19 @@ const Addstudent = () => {
                 </CCol>
                 <CCol xs={6}>
                   <CFormLabel htmlFor="inputAddress">Father's Name</CFormLabel>
-                  <CFormInput id="inputAddress" placeholder="Enter name" />
+                  <CFormInput id="inputAddress0" placeholder="Enter name" />
                 </CCol>
                 <CCol xs={6}>
                   <CFormLabel htmlFor="inputAddress2">Mother's Name</CFormLabel>
-                  <CFormInput id="inputAddress2" placeholder="Enter name" />
+                  <CFormInput id="inputAddress9" placeholder="Enter name" />
                 </CCol>
                 <CCol xs={6}>
                   <CFormLabel htmlFor="inputAddress">Student Email ID</CFormLabel>
-                  <CFormInput id="inputAddress" placeholder="Enter email id" />
+                  <CFormInput id="inputAddress8" placeholder="Enter email id" />
                 </CCol>
                 <CCol xs={6}>
                   <CFormLabel htmlFor="inputAddress2">Contact No</CFormLabel>
-                  <CFormInput id="inputAddress2" placeholder="Enter number" />
+                  <CFormInput id="inputAddress7" placeholder="Enter number" />
                 </CCol>
                 <CCol xs={6}>
                   <CFormLabel htmlFor="inputAddress">Address line 1</CFormLabel>
@@ -40,19 +40,19 @@ const Addstudent = () => {
                 </CCol>
                 <CCol xs={4}>
                   <CFormLabel htmlFor="inputAddress">Batch Year</CFormLabel>
-                  <CFormInput id="inputAddress" placeholder="Enter Batch Year" />
+                  <CFormInput id="inputAddress3" placeholder="Enter Batch Year" />
                 </CCol>
                 <CCol xs={4}>
                   <CFormLabel htmlFor="inputAddress">Student ID</CFormLabel>
-                  <CFormInput id="inputAddress" placeholder="Enter Student ID" />
+                  <CFormInput id="inputAddress4" placeholder="Enter Student ID" />
                 </CCol>
                 <CCol xs={4}>
                   <CFormLabel htmlFor="inputAddress">Date of Birth</CFormLabel>
-                  <CFormInput id="inputAddress" type="date"/>
+                  <CFormInput id="inputAddress5" type="date"/>
                 </CCol>
                 <CCol xs={6}>
                   <CFormLabel htmlFor="inputAddress2">Guardian's name</CFormLabel>
-                  <CFormInput id="inputAddress2" placeholder="Enter number" />
+                  <CFormInput id="inputAddress6" placeholder="Enter number" />
                 </CCol>
                 <CCol md={4}>
                   <CFormLabel htmlFor="inputCity">City</CFormLabel>
@@ -64,7 +64,7 @@ const Addstudent = () => {
                 </CCol>
                 <CCol md={4}>
                   <CFormLabel htmlFor="inputState">State</CFormLabel>
-                  <CFormSelect id="inputState">
+                  <CFormSelect id="inputState3">
                     <option>Choose</option>
                     <option>Delhi</option>
                     <option>Maharashtra</option>
@@ -77,7 +77,7 @@ const Addstudent = () => {
                 </CCol>
                 <CCol md={4}>
                   <CFormLabel htmlFor="inputState">Gender</CFormLabel>
-                  <CFormSelect id="inputState">
+                  <CFormSelect id="inputState2">
                     <option>Choose</option>
                     <option>Male</option>
                     <option>Female</option>
@@ -86,13 +86,13 @@ const Addstudent = () => {
                 </CCol>
                 <CCol md={4}>
                   <CFormLabel htmlFor="inputState">Nationality</CFormLabel>
-                  <CFormSelect id="inputState">
+                  <CFormSelect id="inputState1">
                     <option>Choose...</option>
                     <option>Indian</option>
                     <option>Non-Indian</option>
                   </CFormSelect>
                 </CCol>
-                <CCol xs={12} class="text-center mt-5">
+                <CCol xs={12} className="text-center mt-5">
                   <CButton  type="submit">Submit</CButton>
                 </CCol>
               </CForm>

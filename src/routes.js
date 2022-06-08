@@ -60,7 +60,7 @@ const Studprofile = React.lazy(() => import('./views/student/Studentprofile'))
 const StudDashboard = React.lazy(() => import('./views/dashboard/Studentdash'))
 const StudAssignment = React.lazy(() => import('./views/assignment/StudentAssignment'))
 const Marksstudent = React.lazy(() => import('./views/markcard/Studentmark'))
-const StuAttendance = React.lazy(() => import('./views/attendance/Myattendance'))
+// const StuAttendance = React.lazy(() => import('./views/attendance/Myattendance'))
 const StudMyprofile = React.lazy(() => import('./views/student/Myprofile'))
 
 const routes = [
@@ -72,7 +72,7 @@ const routes = [
   { path: '/studentassignment', name: 'Student Assignment', element: StudAssignment },
   { path: '/studentmarks', name: 'Marks Student', element: Marksstudent },
   { path: '/myprofile', name: 'My profile', element: StudMyprofile },
-  { path: '/myattendance', name: 'My Attendance', element: StuAttendance },
+  // { path: '/myattendance', name: 'My Attendance', element: StuAttendance },
   { path: '/attendance', name: 'Attendance', element: Attendance },
   { path: '/assignment', name: 'Assignment', element: Assignment },
   { path: '/markCard', name: 'Mark Card', element: MarkCard },

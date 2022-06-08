@@ -1,51 +1,37 @@
 /* eslint-disable prettier/prettier */
-export const stdData = [
+export const stdDataOfclass5th = [
     {
-        unit: "BT",
-        site: "Moradabad",
-        empcode: "BT MBD 6744",
+        roll: "6744",
         name: "RAJU KASHYUP",
     },
     {
-        unit: "AT",
-        site: "Delhi",
-        empcode: "AT DL 5644",
+        roll: "5644",
         name: "MOHAN DAS",
     },
     {
-        unit: "XY",
-        site: "Haryana",
-        empcode: "XY HR 1144",
+        roll: "1144",
         name: "JOGINDER",
     },
     {
-        unit: "BT",
-        site: "Gurugram",
-        empcode: "BT GG 6994",
+        roll: "6994",
         name: "HARISH",
     },
+];
+export const stdDataOfclass6th = [
     {
-        unit: "JI",
-        site: "Jammu",
-        empcode: "JI JK 6990",
+        roll: "6990",
         name: "KASTURBA",
     },
     {
-        unit: "XY",
-        site: "Haryana",
-        empcode: "XY HR 1144",
+        roll: "1144",
         name: "JOGINDER",
     },
     {
-        unit: "BT",
-        site: "Gurugram",
-        empcode: "BT GG 6994",
+        roll: "6994",
         name: "HARISH",
     },
     {
-        unit: "JI",
-        site: "Jammu",
-        empcode: "JI JK 6990",
+        roll: "6990",
         name: "KASTURBA",
     },
 ];
