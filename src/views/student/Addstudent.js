@@ -1,70 +1,116 @@
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable prettier/prettier */
+
 import React from 'react'
 import { CButton, CFormInput,CFormLabel,CCol,CForm,CFormSelect} from '@coreui/react'
+import { addStudent, getStudentData } from 'src/api/contractCall'
+import { useState } from 'react'
 const Addstudent = () => {
+  const [status, setStatus] = useState("")
+  const addStudentData = async () => {
+    setStatus("Adding student...")
+    let defaultDob = document.getElementById("dob").value;
+    let DateDob = new Date(
+      defaultDob
+    );
+    let dob = parseInt(DateDob.getTime() / 1000);
+    let address = document.getElementById('address1').value + " " + document.getElementById('address2').value + " " + document.getElementById('address3').value + " " + document.getElementById('address4').value + " " + document.getElementById('address5').value
+    let studentParams = {
+      name: document.getElementById('studentName').value,
+      rollNumber: parseInt(document.getElementById('rollnumber').value),
+      dob: parseInt(dob),
+      gender: document.getElementById('gender').value,
+      grade: parseInt(document.getElementById('grade').value),
+      email: document.getElementById('email').value,
+      batch: parseInt(document.getElementById('batch').value),
+      address: address,
+      caste: document.getElementById('caste').value,
+      nationality: document.getElementById('nationality').value,
+      guardianName: document.getElementById('guardian').value,
+      fatherName: document.getElementById('fatherName').value,
+      motherName: document.getElementById('motherName').value,
+      fatherEducation: document.getElementById('fatherEducation').value,
+      motherEducation: document.getElementById('motherEducation').value,
+    };
+    await addStudent(studentParams).then((res) => {
+      console.log(res)
+      if (res.status === "Success") {
+        setStatus("Student data added successfully.")
+      } else {setStatus("Something went wrong. Please try again.")}
+    }).catch((err) => {
+      console.log(err)
+      setStatus("Something went wrong. Please try again.")
+    })
+  }
   return (
       <>
         <CForm className="row g-3">
                 <CCol md={6}>
-                  <CFormLabel htmlFor="inputEmail4">Student Name</CFormLabel>
-                  <CFormInput type="email" id="inputEmail4" placeholder="Enter name"/>
+                  <CFormLabel htmlFor="studentName">Student Name</CFormLabel>
+          <CFormInput type="text" id="studentName" placeholder="Enter name"/>
                 </CCol>
                 <CCol md={6}>
-                  <CFormLabel htmlFor="inputPassword4">Class</CFormLabel>
-                  <CFormInput type="password" id="inputPassword4" placeholder="Enter Class" />
+                  <CFormLabel htmlFor="grade">Class</CFormLabel>
+                  <CFormInput type="number" id="grade" placeholder="Enter Class" />
                 </CCol>
                 <CCol xs={6}>
-                  <CFormLabel htmlFor="inputAddress">Father's Name</CFormLabel>
-                  <CFormInput id="inputAddress0" placeholder="Enter name" />
+          <CFormLabel htmlFor="fatherName">Father's Name</CFormLabel>
+          <CFormInput id="fatherName" placeholder="Enter name" />
                 </CCol>
                 <CCol xs={6}>
-                  <CFormLabel htmlFor="inputAddress2">Mother's Name</CFormLabel>
-                  <CFormInput id="inputAddress9" placeholder="Enter name" />
+          <CFormLabel htmlFor="fatherEducation">Father's Education</CFormLabel>
+          <CFormInput id="fatherEducation" placeholder="Enter education" />
                 </CCol>
                 <CCol xs={6}>
-                  <CFormLabel htmlFor="inputAddress">Student Email ID</CFormLabel>
-                  <CFormInput id="inputAddress8" placeholder="Enter email id" />
+          <CFormLabel htmlFor="motherName">Mother's Name</CFormLabel>
+          <CFormInput id="motherName" placeholder="Enter name" />
                 </CCol>
                 <CCol xs={6}>
-                  <CFormLabel htmlFor="inputAddress2">Contact No</CFormLabel>
-                  <CFormInput id="inputAddress7" placeholder="Enter number" />
+          <CFormLabel htmlFor="motherEducation">Mother's Education</CFormLabel>
+          <CFormInput id="motherEducation" placeholder="Enter education" />
                 </CCol>
                 <CCol xs={6}>
-                  <CFormLabel htmlFor="inputAddress">Address line 1</CFormLabel>
-                  <CFormInput id="inputAddress" placeholder="Enter address" />
+                  <CFormLabel htmlFor="email">Student Email ID</CFormLabel>
+          <CFormInput type='text' id="email" placeholder="Enter email id" />
                 </CCol>
                 <CCol xs={6}>
-                  <CFormLabel htmlFor="inputAddress2">Address line 2</CFormLabel>
-                  <CFormInput id="inputAddress2" placeholder="Enter address" />
+                  <CFormLabel htmlFor="caste">Caste</CFormLabel>
+          <CFormInput id="caste" placeholder="Enter caste" type='text'/>
+                </CCol>
+                <CCol xs={6}>
+                  <CFormLabel htmlFor="address1">Address line 1</CFormLabel>
+          <CFormInput id="address1" placeholder="Enter address" />
+                </CCol>
+                <CCol xs={6}>
+          <CFormLabel htmlFor="address2">Address line 2</CFormLabel>
+          <CFormInput id="address2" placeholder="Enter address" />
                 </CCol>
                 <CCol xs={4}>
-                  <CFormLabel htmlFor="inputAddress">Batch Year</CFormLabel>
-                  <CFormInput id="inputAddress3" placeholder="Enter Batch Year" />
+                  <CFormLabel htmlFor="batch">Batch Year</CFormLabel>
+          <CFormInput type='number' id="batch" placeholder="Enter Batch Year" />
                 </CCol>
                 <CCol xs={4}>
-                  <CFormLabel htmlFor="inputAddress">Student ID</CFormLabel>
-                  <CFormInput id="inputAddress4" placeholder="Enter Student ID" />
+                  <CFormLabel htmlFor="rollnumber">Roll Number</CFormLabel>
+          <CFormInput type = 'number' id="rollnumber" placeholder="Enter Student roll number" />
                 </CCol>
                 <CCol xs={4}>
-                  <CFormLabel htmlFor="inputAddress">Date of Birth</CFormLabel>
-                  <CFormInput id="inputAddress5" type="date"/>
+                  <CFormLabel htmlFor="dob">Date of Birth</CFormLabel>
+          <CFormInput type='date' id="dob" />
                 </CCol>
                 <CCol xs={6}>
-                  <CFormLabel htmlFor="inputAddress2">Guardian's name</CFormLabel>
-                  <CFormInput id="inputAddress6" placeholder="Enter number" />
+                  <CFormLabel htmlFor="guardian">Guardian's name</CFormLabel>
+          <CFormInput id="guardian" placeholder="Enter number" />
                 </CCol>
                 <CCol md={4}>
-                  <CFormLabel htmlFor="inputCity">City</CFormLabel>
-                  <CFormInput id="inputCity" />
+          <CFormLabel htmlFor="address3">City</CFormLabel>
+          <CFormInput id="address3" />
                 </CCol>
                 <CCol md={2}>
-                  <CFormLabel htmlFor="inputZip">Zip</CFormLabel>
-                  <CFormInput id="inputZip" />
+          <CFormLabel htmlFor="address4">Zip</CFormLabel>
+          <CFormInput id="address4" />
                 </CCol>
                 <CCol md={4}>
-                  <CFormLabel htmlFor="inputState">State</CFormLabel>
-                  <CFormSelect id="inputState3">
+                  <CFormLabel htmlFor="address5">State</CFormLabel>
+                  <CFormSelect id="address5">
                     <option>Choose</option>
                     <option>Delhi</option>
                     <option>Maharashtra</option>
@@ -76,26 +122,28 @@ const Addstudent = () => {
                   </CFormSelect>
                 </CCol>
                 <CCol md={4}>
-                  <CFormLabel htmlFor="inputState">Gender</CFormLabel>
-                  <CFormSelect id="inputState2">
-                    <option>Choose</option>
-                    <option>Male</option>
-                    <option>Female</option>
-                    <option>Transgender</option>
+                  <CFormLabel htmlFor="gender">Gender</CFormLabel>
+                    <CFormSelect id="gender">                    
+                    <option>male</option>
+                    <option>female</option>                    
                   </CFormSelect>
                 </CCol>
                 <CCol md={4}>
-                  <CFormLabel htmlFor="inputState">Nationality</CFormLabel>
-                  <CFormSelect id="inputState1">
-                    <option>Choose...</option>
+                  <CFormLabel htmlFor="nationality">Nationality</CFormLabel>
+          <CFormSelect id="nationality">
+                   
                     <option>Indian</option>
                     <option>Non-Indian</option>
                   </CFormSelect>
                 </CCol>
                 <CCol xs={12} className="text-center mt-5">
-                  <CButton  type="submit">Submit</CButton>
+                  <CButton  type="submit"onClick={() => {
+            addStudentData();
+                  }}>Submit</CButton>
                 </CCol>
               </CForm>
+              <h2>{status}</h2>
+      
       </>
     );
 }

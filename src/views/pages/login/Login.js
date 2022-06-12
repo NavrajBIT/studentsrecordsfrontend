@@ -1,5 +1,6 @@
 /* eslint-disable no-sequences */
 /* eslint-disable no-unused-expressions */
+
 import React, { useState, useContext } from 'react'
 import userContext from 'src/context/User/userContext'
 import { useNavigate } from 'react-router-dom'
@@ -19,6 +20,7 @@ import {
 import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser, cilInfo } from '@coreui/icons'
 import './login.css'
+import { checkLogin } from 'src/api/contractCall'
 
 const Login = () => {
   const user = useContext(userContext)
@@ -26,13 +28,28 @@ const Login = () => {
     name: null,
     password: null,
   })
+  const [status, setStatus] = useState("")
   let navigate = useNavigate()
-  const loginuser = () => {
-    if (stdInput.name !== null && stdInput.password !== null) {
-      navigate('/dashboard')
-    } else {
-      alert('Please enter username with correct password')
-    }
+  const loginuser = async () => {
+    setStatus("logging in...")
+    await checkLogin(stdInput.name, stdInput.password).then((response) => {    
+      
+      if (response.status === "Failed" || response.loginType === "Unauthorized") { setStatus('Username or password incorrect.') }
+      else {
+        user.updateState(response.loginType, response.userId, 1)
+        // navigate('/dashboard')
+        navigate('/mydashboard')
+      }
+    }).catch((err) => {
+      console.log(err)
+      setStatus('Something went wrong. Please try again.')
+    })
+
+    // if (stdInput.name !== null && stdInput.password !== null) {
+    //   navigate('/dashboard')
+    // } else {
+    //   alert('Please enter username with correct password')
+    // }
   }
 
   return (
@@ -71,22 +88,11 @@ const Login = () => {
                         }}
                       />
                     </CInputGroup>
-                    <CInputGroup className="mb-3">
-                      <CInputGroupText>
-                        <CIcon icon={cilInfo} />
-                      </CInputGroupText>
-                      <select
-                        className="form-select"
-                        aria-label="Default select example"
-                        onChange={(e) => user.updateType(e.target.value)}
-                      >
-                        <option defaultValue="Admin">Admin</option>
-                        <option value="Student">Student</option>
-                      </select>
-                    </CInputGroup>
+
+                    <p className="text-white">{status}</p>
                     <CRow>
                       <CCol xs={6}>
-                        <CButton color="primary" className="px-4" onClick={() => loginuser()}>
+                        <CButton color="primary" className="px-4" onClick={async () => { await loginuser() }}>
                           Login
                         </CButton>
                       </CCol>
@@ -96,6 +102,7 @@ const Login = () => {
                         </CButton>
                       </CCol>
                     </CRow>
+
                   </CForm>
                 </CCardBody>
               </CCard>

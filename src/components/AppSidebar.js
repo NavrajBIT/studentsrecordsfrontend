@@ -26,6 +26,22 @@ const AppSidebar = () => {
   }
   const newNav = navigation.filter(checkAccess)
 
+  const NavItem = (props) => {
+    return <div style={
+      {border: '1px solid rgba(0, 0, 0, 0.5)',
+       borderRadius: '5px',
+        display: 'flex',        
+        justifyContent: 'center',
+        padding: '0.6rem',        
+        fontSize: '1.25rem'
+        }} onClick={() => {  
+            user.updateState(user.userState.type, user.userState.id, props.view)          
+        }}>
+      <p style={{margin: '0px', padding: '0px'}}>{props.name}</p>
+          
+          </div>
+  }
+
   return (
     <CSidebar
       position="fixed"
@@ -35,14 +51,33 @@ const AppSidebar = () => {
         dispatch({ type: 'set', sidebarShow: visible })
       }}
     >
-      <CSidebarBrand className="d-none d-md-flex" to="/">
+      <CSidebarBrand className="d-none d-md-flex" onClick={() => {
+        user.updateState(user.userState.type, user.userState.id, 1)
+      }}>
         {/* <CIcon className="sidebar-brand-full" icon={logoNegative} height={35} />
         <CIcon className="sidebar-brand-narrow" icon={sygnet} height={35} /> */}
-        <h5>Student Dashboard</h5>
+        <h5 onClick={() => {
+          user.updateState(user.userState.type, user.userState.id, 1)
+        }}>{user.userState.type === "Admin" ? "School" : "Student"} Dashboard</h5>
       </CSidebarBrand>
       <CSidebarNav>
         <SimpleBar>
-          <AppSidebarNav items={newNav} />
+          {user.userState.type === "Admin" ? <>
+            <NavItem name='Add Student' view={2} />
+            <NavItem name='View Records' view={3} />
+            <NavItem name='Attendence' view={4} />
+            <NavItem name='Assignment' view={5} />
+            <NavItem name='Marks Card' view={6} />
+            <NavItem name='Time Table' view={7} />
+          </> : <>
+            <NavItem name='Attendence' view={4} />
+            <NavItem name='Assignment' view={5} />
+            <NavItem name='Marks Card' view={6} />
+            <NavItem name='Time Table' view={7} />
+          </>}
+          {/* <AppSidebarNav items={newNav} /> */}
+          
+          
         </SimpleBar>
       </CSidebarNav>
       {/* <CSidebarToggler

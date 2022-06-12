@@ -1,3 +1,8 @@
+/* eslint-disable no-sequences */
+/* eslint-disable no-unused-expressions */
+
+
+
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
@@ -20,9 +25,31 @@ import { cilBell, cilMenu } from '@coreui/icons'
 import { AppHeaderDropdown } from './header/index'
 // import { logo } from 'src/assets/brand/logo'
 
+import { useContext, useEffect, useState } from 'react'
+import userContext from 'src/context/User/userContext'
+import { useNavigate } from 'react-router-dom'
+import { getStudentPrimaryData } from 'src/api/contractCall'
+
 const AppHeader = () => {
+  const user = useContext(userContext)
   const dispatch = useDispatch()
   const sidebarShow = useSelector((state) => state.sidebarShow)
+  const [myname, setName] = useState("Student")
+  let navigate = useNavigate()
+
+  useEffect(() => {
+    if (user.userState.type === null) {
+      navigate('/')
+    }
+    if (user.userState.type === "Student") {
+      getStudentPrimaryData(user.userState.id).then((res) => {
+        console.log(res)
+        setName(res.data.name)
+      })
+    }
+  }, [])
+
+
 
   return (
     <CHeader position="sticky" className="mb-4">
@@ -39,7 +66,8 @@ const AppHeader = () => {
         <CHeaderNav className="d-none d-md-flex me-auto">
           <CNavItem>
             <CNavLink to="/dashboard" component={NavLink}>
-              School Dashboard
+              {user.userState.type === "Admin" ? "School Dashboard" : <>{myname}&apos;s Profile</>}               
+              
             </CNavLink>
           </CNavItem>
           {/* <CNavItem>
